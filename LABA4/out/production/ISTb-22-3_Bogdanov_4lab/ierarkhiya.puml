@@ -1,0 +1,77 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+
+abstract class Post {
+name: String
+id: int
+
+Post(name: String, id: int)
+getName(): String
+abstract GetAboutMore(): void
+getId(): int
+}
+
+class Student {
+course: String
+group: String
+Student(name: String, id: int, course: String, group: String)
+getCourse(): String
+getGroup(): String
+GetAboutMore(): void
+}
+
+class Teacher {
+schedule: String
+institute: String
+Teacher(name: String, id: int, schedule: String, institute: String)
+getSchedule(): String
+getInstitute(): String
+GetAboutMore(): void
+}
+
+class Department_chair {
+qualification: String
+experience: int
+
+Department_chair(name: String, id: int, qualification: String, experience: int)
+getQualification(): String
+getExperience(): int
+GetAboutMore(): void
+}
+
+class AllPersones {
+persones: HashMap<Integer, Post>
+AllPosts()
+addStudent(name: String, id: int, course: String, group: String): void
+addTeacher(name: String, id: int, schedule: String, institute: String): void
+addDepartment_chair(name: String, id: int, qualification: String, experience: int): void
+deletePersonById(id: int): void
+printPerson(): void
+searchPersonById(id: int): void
+}
+
+class Main {
+allPersones: AllPersones
+scanner: Scanner
+
+main(args: String[]): void
+}
+
+Republic --> Post
+Monarchy --> Post
+Federation --> Post
+AllPersones --> Post
+Main --> AllPersones
+
+@enduml
