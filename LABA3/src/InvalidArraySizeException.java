@@ -1,0 +1,9 @@
+public class InvalidArraySizeException extends RuntimeException {
+    public InvalidArraySizeException() {
+        super("Invalid array size: Size must be greater than zero.");
+    }
+
+    public InvalidArraySizeException(String message) {
+        super(message);
+    }
+}
